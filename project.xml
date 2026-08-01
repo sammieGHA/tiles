@@ -3,6 +3,8 @@
 	
 	<meta title="Tiles" package="com.sample.tiles" version="1.0.0" company="Company Name" />
 	<app main="Main" path="export" file="Tiles" />
+
+	<window background="#2c3e50" fps="60" resizable="false"/>
 	
 	<source path="src" />
 	<haxelib name="openfl" />
