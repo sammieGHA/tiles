@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	
+	<meta title="Tiles" package="com.sample.tiles" version="1.0.0" company="Company Name" />
+	<app main="Main" path="export" file="Tiles" />
+	
+	<source path="src" />
+	<haxelib name="openfl" />
+	<assets path="res"/>
+</project>
