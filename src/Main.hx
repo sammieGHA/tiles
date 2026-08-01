@@ -20,6 +20,9 @@ class Main extends Sprite
 		addChild(tiles);
 		tiles.regenerate();
 
+		var fps = new FPS(10, 10);
+		addChild(fps);
+
 		stage.addEventListener(KeyboardEvent.KEY_DOWN, (e: KeyboardEvent) -> {
 			if (e.keyCode == Keyboard.SPACE)
 				tiles.regenerate();
