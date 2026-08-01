@@ -7,6 +7,9 @@ import openfl.display.Tile;
 import openfl.Assets;
 import openfl.geom.Rectangle;
 
+/**
+ * the tiles in the background thatr are not haxeflixel colors george. . . . . 
+ */
 class Tiles extends Sprite
 {
     var tilemap: Tilemap;

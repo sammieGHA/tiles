@@ -8,6 +8,11 @@ import openfl.Lib;
 
 import openfl.system.System;
 
+/**
+ * the fps counter that go
+ * fps:
+ * mem:
+ */
 class FPS extends Sprite {
     var background: Sprite;
     var textField: TextField;
