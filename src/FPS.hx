@@ -6,15 +6,23 @@ import openfl.text.TextFormat;
 import openfl.events.Event;
 import openfl.Lib;
 
+import openfl.system.System;
+
 class FPS extends Sprite {
+    var background: Sprite;
     var textField: TextField;
     var frameCount: Int = 0;
     var last: Float = 0;
+
+    var padding: Float = 6;
 
     public function new(x: Float = 10, y: Float = 10) {
         super();
 
         this.x = x; this.y = y;
+
+        background = new Sprite();
+        addChild(background);
 
         textField = new TextField();
         textField.autoSize = LEFT;
@@ -25,7 +33,10 @@ class FPS extends Sprite {
         textField.defaultTextFormat = formatttttttttttttttt;
         textField.embedFonts = true;
 
-        textField.text = "FPS: 0";
+        textField.x = padding;
+        textField.y = padding;
+
+        textField.text = "FPS: ...\nMEM: ...";
 
         addChild(textField);
 
@@ -41,10 +52,24 @@ class FPS extends Sprite {
 
         if (elapsed >= 500) {
             var fps = Math.round(frameCount / (elapsed / 1000));
-            textField.text = 'FPS: $fps';
+            var mem = Math.round(System.totalMemory / 1024 / 1024);
+
+            updateText('FPS: $fps\nMEM: $mem MB');
 
             frameCount = 0;
             last = curTime;
         }
+    }
+
+    function updateText(text: String) {
+        textField.text = text;
+
+        var w = textField.width + padding * 2;
+        var h = textField.height + padding * 2;
+
+        background.graphics.clear();
+        background.graphics.beginFill(0x000000, .5);
+        background.graphics.drawRect(0, 0, w, h);
+        background.graphics.endFill();
     }
 }
